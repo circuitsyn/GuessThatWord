@@ -11,21 +11,19 @@
   </head>
   <body>
       
-    <!--Main Intro Header-->
-    <div class="jumbotron">
-        <h1 class="display-4">Digital Mind Reading Challenge</h1>
-        <p class="lead">Welcome To the Digital Palm Reading Main Event!</p>
-        <hr class="my-4">
-        <p>We will asking you to pick a letter and you will see if you can guess which latter I am thinking about.</p>
-        <p class="lead">
-          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-        </p>
-      </div>
-
-
+    
 
 
     <script type="text/javascript">
+    var wordBank = []; //array to store different words for hangman game
+    var wins; //variable to store wins
+    var losses; //variable to store losses
+    var guessesLeft; //variable for guesses left
+    var userInput; //variable to store user choice keyboard input
+    var wrongGuesses = []; //array to store and display wrong guesses
+    var currentWord; // array to compare and store current chosen word from wordBank
+    var underscores = []; //array to display '_' for unsolved letters in word
+
 
     
     var name = prompt("Let's get started by entering your name below!")
