@@ -15,19 +15,23 @@
 
 
     <script type="text/javascript">
-    var wordBank = []; //array to store different words for hangman game
-    var wins; //variable to store wins
-    var losses; //variable to store losses
-    var guessesLeft; //variable for guesses left
-    var userInput; //variable to store user choice keyboard input
-    var wrongGuesses = []; //array to store and display wrong guesses
-    var currentWord; // array to compare and store current chosen word from wordBank
-    var underscores = []; //array to display '_' for unsolved letters in word
 
+    var hangmanGame = {
+        wordBank : ["Homer","Bart","Marge","Lisa","Krusty","Frink","Maggie"], //array to store different words for hangman game
+        wins : 0, //variable to store wins
+        losses : 0, //variable to store losses
+        guessesLeft : 0, //variable for guesses left
+        userInput : "", //variable to store user choice keyboard input
+        wrongGuesses : [], //array to store and display wrong guesses
+        currentWord : [], // array to compare and store current chosen word from wordBank
+        underscores : [], //array to display '_' for unsolved letters in word
+
+    };
+    
 
     
-    var name = prompt("Let's get started by entering your name below!")
-    console.log("Hello" + name "!");
+    
+    console.log(this.wins);
     
     
     
