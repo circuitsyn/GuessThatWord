@@ -12,13 +12,13 @@ var hangmanGame = {
     currentWord: [], // array to compare and store current chosen word from wordBank
     underscores: [], //array to display '_' for unsolved letters in word
     chooseWord : function() {
-        currentWord = this.wordBank[Math.floor(Math.random() * this.wordBank.length)];
-        console.log(currentWord);
+        currentWord = (this.wordBank[Math.floor(Math.random() * this.wordBank.length)]).split("");
     },
     setScoreLength: function() {
-        for (i=0; i<this.currentWord.length; i++)
+        console.log(currentWord.length);
+        for (i=0; i<currentWord.length; i++)
         this.underscores[i] = "_";
-        console.log(this.underscores[i]);
+        
     },
     supplyGuesses: function() {
         document.getElementById("guessCount").innerHTML = hangmanGame.guessesLeft;
