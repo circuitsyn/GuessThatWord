@@ -9,29 +9,120 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   </head>
-  <body>
-      
+  <body class="bg">
+    <div> 
     
+    <!--Main Content Container-->
+
+    <div class="container vertical-center contentbackdrop mt-5">
+
+      <!--Section to detail intro-->
+      <div class="row">
+          <div class="col-md-12 introText pt-5 pb-3">
+            <h1>Welcome to the Simpsons Trivia Hangman Game!</h1>  
+            <p>Please use all the letters in the alphabet to guess the simpson character displayed in the image! </p>
+          </div>
+      </div>    
+      
+      <hr>
+      <!--Section to display troy on left and image of character to guess on right-->
+      <div class="row">
+          
+          <div class="col-md-6">
+              <img src="assets/images/troy.png" alt="Picture of Troy McClure" class="img-thumbnail mx-auto d-block img-main">
+          </div>
+          
+          <div class="col-md-6">
+            <img src="assets/images/simpsFam.png" alt="Simpson Character to Guess" class="img-thumbnail mx-auto d-block img-main">
+          </div>
+      </div>
+      
+      <!--Section to display underscores and letter as they appear-->
+      <div class="row">
+
+        <div class="mx-auto wordDisplay">
+              <p>Where _ _ _ _ _ should go</p>
+        </div>
+
+      </div>
+
+      <!--Section to display number of guesses left-->
+      
+      <div class="row mb-5">
+        <div class="mx-auto guessDisplay">
+            <div class="card-deck">
+              <div class="card mx-auto">
+                  <img class="card-img-top imgGuess" src="assets/images/homerThink.png" alt="Guess Image">
+                  <div class="card-body">
+                    <h5 class="card-title">Guesses Left</h5>
+                    <p class="card-text">Current Count:</p><p id="guessCount"> </p>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <script type="text/javascript">
 
     var hangmanGame = {
-        wordBank : ["Homer","Bart","Marge","Lisa","Krusty","Frink","Maggie"], //array to store different words for hangman game
-        wins : 0, //variable to store wins
-        losses : 0, //variable to store losses
-        guessesLeft : 0, //variable for guesses left
-        userInput : "", //variable to store user choice keyboard input
-        wrongGuesses : [], //array to store and display wrong guesses
-        currentWord : [], // array to compare and store current chosen word from wordBank
-        underscores : [], //array to display '_' for unsolved letters in word
+        wordBank: ["Homer Simpson","Apu Nahasapeemapetilon","Marge Simpson","Groundskeeper Willy","Krusty The Clown","Professor Frink","Blinky","Bleeding Gums Murphy","Hugo Simpson ","Kang","Mr Sparkle","Sideshow Mel"], //array to store different words for hangman game
+        imgBank: [],
+        wins: 0, //variable to store wins
+        losses: 0, //variable to store losses
+        guessesLeft: 0, //variable for guesses left
+        userGuess: "", //variable to store user choice keyboard input
+        wrongGuesses: [], //array to store and display wrong guesses
+        currentWord: [], // array to compare and store current chosen word from wordBank
+        underscores: [], //array to display '_' for unsolved letters in word
 
     };
     
-
+    document.onkeyup = function(event){
+		
+    // stores keypress in userGuess
+        
+    var userGuess = event.key.toLowerCase();
+    
+    console.log("userGuess = " + userGuess);
     
     
-    console.log(this.wins);
+    
     
     
     

@@ -1,0 +1,36 @@
+body, html {
+    height: 100%;
+}
+.bg {
+    /* The image used */
+    background-image: url("../../assets/images/simpsWallpaper.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contentbackdrop {
+    background-color: #FFD90F;
+    border-radius: 5%;
+    border: solid 2px white;
+}
+
+.introText{
+    text-align: center;
+}
+
+.img-main {
+    height: 400px !important;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.imgGuess {
+    height: 200px !important;
+    padding-top: 10px;
+}
