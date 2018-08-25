@@ -16,9 +16,14 @@ var hangmanGame = {
     },
     setScoreLength: function() {
         console.log(currentWord.length);
-        for (i=0; i<currentWord.length; i++)
+        for (i=0; i<currentWord.length; i++){
         this.underscores[i] = "_";
-        
+        }
+        console.log(this.underscores.length);
+        for (j=0; j<this.underscores.length; j++){
+            console.log(j);
+        document.getElementById("fillunderscore").innerHTML += this.underscores[j];
+        }
     },
     supplyGuesses: function() {
         document.getElementById("guessCount").innerHTML = hangmanGame.guessesLeft;
