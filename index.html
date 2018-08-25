@@ -14,13 +14,14 @@
     
     <!--Main Content Container-->
 
-    <div class="container vertical-center contentbackdrop mt-5">
+    <div class="container contentbackdrop mt-5">
 
       <!--Section to detail intro-->
       <div class="row">
           <div class="col-md-12 introText pt-5 pb-3">
             <h1>Welcome to the Simpsons Trivia Hangman Game!</h1>  
             <p>Please use all the letters in the alphabet to guess the simpson character displayed in the image! </p>
+            <p>Press a letter and start guessing!</p>
           </div>
       </div>    
       
@@ -36,7 +37,8 @@
             <img src="assets/images/simpsFam.png" alt="Simpson Character to Guess" class="img-thumbnail mx-auto d-block img-main">
           </div>
       </div>
-      
+
+            
       <!--Section to display underscores and letter as they appear-->
       <div class="row">
 
@@ -97,45 +99,15 @@
 
 
 
-
-    <script type="text/javascript">
-
-    var hangmanGame = {
-        wordBank: ["Homer Simpson","Apu Nahasapeemapetilon","Marge Simpson","Groundskeeper Willy","Krusty The Clown","Professor Frink","Blinky","Bleeding Gums Murphy","Hugo Simpson ","Kang","Mr Sparkle","Sideshow Mel"], //array to store different words for hangman game
-        imgBank: [],
-        wins: 0, //variable to store wins
-        losses: 0, //variable to store losses
-        guessesLeft: 0, //variable for guesses left
-        userGuess: "", //variable to store user choice keyboard input
-        wrongGuesses: [], //array to store and display wrong guesses
-        currentWord: [], // array to compare and store current chosen word from wordBank
-        underscores: [], //array to display '_' for unsolved letters in word
-
-    };
+  
     
-    document.onkeyup = function(event){
-		
-    // stores keypress in userGuess
-        
-    var userGuess = event.key.toLowerCase();
-    
-    console.log("userGuess = " + userGuess);
-    
-    
-    
-    
-    
-    
-    
-    
-    </script>
-
-
+  
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="assets/javascript/game.js"></script>
   </body>
 </html>

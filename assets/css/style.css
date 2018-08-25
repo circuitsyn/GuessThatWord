@@ -14,6 +14,15 @@ body, html {
     background-size: cover;
 }
 
+@font-face {
+    font-family: Simpsonfont !important;
+    src: url("Simpsonfont.woff") format("opentype") !important;
+}
+
+h1 {
+    font-family: Simpsonfont !important;
+}
+
 .contentbackdrop {
     background-color: #FFD90F;
     border-radius: 5%;
@@ -32,5 +41,13 @@ body, html {
 
 .imgGuess {
     height: 200px !important;
+    background-color: transparent !important;
+    border: none !important;
     padding-top: 10px;
 }
+
+.img-top{
+    background-color: transparent !important;
+    border: none !important;
+}
+
