@@ -40,7 +40,7 @@ underscores.length = currentWord.length;
 
             }
         }
-
+        guessesSoFar.push(userGuess); 
         if(currentWord == underscores) {
             wins++;
             currentWord = (wordBank[Math.floor(Math.random() * wordBank.length)]).split("");
@@ -53,14 +53,14 @@ underscores.length = currentWord.length;
                 guessesLeft = 10;
             }
                 else {
-                for (j=0; j<underscores.length; j++){
-                    document.getElementById("fillunderscore").innerHTML = underscores;
-                }
-                guessesLeft--;
-                for (j=0; j<currentWord.length;j++) {
-                    if (currentWord[j] === userGuess) {
-                        underscores[j] = userGuess;
-                        console.log(underscores);
+                    for (j=0; j<underscores.length; j++){
+                        document.getElementById("fillunderscore").innerHTML = underscores;
+                    }
+                    guessesLeft--;
+                    for (j=0; j<currentWord.length;j++) {
+                        if (currentWord[j] === userGuess) {
+                            underscores[j] = userGuess;
+                            console.log(underscores);
             }
         }
     }
@@ -78,37 +78,12 @@ underscores.length = currentWord.length;
 };
 
 
-// window.onload = function(){
 
-
-    
-    
-//     
-//     var wins = 0; //variable to store wins
-//     var losses = 0; //variable to store losses
-    
-//     
-//     
-//     
-//     
-    
     
        
     
     
-//     //stores keypress in userGuess
-//     document.onkeyup = function(event){
-//     var userGuess = event.key.toLowerCase();
-// };
-//     pushGuesses();
-//     chooseWord();
-//     setScoreLength();
-//     supplyGuesses();
-//     // console.log(underscores);
-//     // console.log(currentWord);
-//     // console.log(userGuess) ;
-        
-    
+
     
     
     
