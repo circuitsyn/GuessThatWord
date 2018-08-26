@@ -41,6 +41,9 @@ window.onload = function(){
             for (j=0; j<this.underscores.length; j++){
                 document.getElementById("fillunderscore").innerHTML = this.underscores.join(" ");
             }
+            //set underscore counter counter
+            this.remainingLetters = this.underscores.length;
+
         },
 
         //function that pushes the guesses left count to the DOM
