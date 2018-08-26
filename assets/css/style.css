@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Simpsonfont' !important;
-    src: url('file:\Users\circu\OneDrive\School\UW\Git\Word-Guess-Game\assets\fonts\Simpsonfont.woff') format('woff') !important;
+    font-family: "Simpsonfont";
+    src: url("../../assets/fonts/Simpsonfont.woff") format("woff");
 }
 
 body, html {
@@ -23,6 +23,18 @@ body, html {
 
 h1 {
     font-family: Simpsonfont !important;
+    word-spacing: 20px;
+}
+
+h5 {
+    font-family: Simpsonfont !important;
+    word-spacing: 20px;
+    font-weight: bold;
+}
+
+p {
+    font-family: Simpsonfont !important;
+    word-spacing: 10px;
 }
 
 .contentbackdrop {
