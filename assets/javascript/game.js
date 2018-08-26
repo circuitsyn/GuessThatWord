@@ -5,7 +5,7 @@ window.onload = function(){
         wordBank: ["Homer","Apu","Marge","Willy","Krusty","Frink","Blinky","Hugo","Kang","Sparkle","Mel"], //array to store different words for hangman game
         wins: 0, //variable to store wins
         losses: 0, //variable to store losses
-        remainingLetters: 0;
+        remainingLetters: 0,
         guessesLeft: 10, //variable for guesses left
         userGuess: "", //variable to store user choice keyboard input
         guessesSoFar: [], //array to store and display wrong guesses
@@ -120,7 +120,7 @@ window.onload = function(){
     }
     
     //Created a while loop to check for wins (succesful word match) and if not enter to play game
-    while (remainingLetters > 0){
+    while (hangmanGame.remainingLetters > 0){
 
         //compared useguess to current word and then applies change to underscores if matched
         //if yes change underscore and update underscore 
