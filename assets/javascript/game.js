@@ -1,8 +1,8 @@
 window.onload = function(){
-
+    
 
     var hangmanGame = {
-        wordBank: ["Homer","Apu","Marge","Willy","Krusty","Frink","Blinky","Hugo","Kang","Sparkle","Mel"], //array to store different words for hangman game
+        wordBank: ["homer","apu","marge","willy","krusty","frink","blinky","hugo","kang","sparkle","mel"], //array to store different words for hangman game
         wins: 0, //variable to store wins
         losses: 0, //variable to store losses
         remainingLetters: 0,
@@ -24,16 +24,20 @@ window.onload = function(){
                     "assets/images/sideShowMel.png"],
 
         //function to choose word from word bank and break it apart to fill the array
-        chooseWord : function() {
+        chooseWord: function() {
             currentWord = (this.wordBank[Math.floor(Math.random() * this.wordBank.length)]).split("");
+            return currentWord.length;
         },
 
         //function to determine and set the underscore array based on chosen word
         setUnderscoreLength: function() {
-            // console.log(currentWord.length);
+            
+            
             this.underscores.length = this.currentWord.length;
             for (i=0; i<currentWord.length; i++){
             this.underscores[i] = "_";
+            console.log(this.underscores.length);
+            console.log(this.currentWord.length);
             }
             // console.log(this.underscores.length);
 
@@ -42,7 +46,8 @@ window.onload = function(){
                 document.getElementById("fillunderscore").innerHTML = this.underscores.join(" ");
             }
             //set underscore counter counter
-            this.remainingLetters = this.underscores.length;
+            this.remainingLetters = this.currentWord.length;
+            console.log(this.remainingLetters);
 
         },
 
@@ -97,7 +102,7 @@ window.onload = function(){
     
     //grabs keypress on key up
     document.onkeyup = function(event){
-    
+        // debugger;
     //stores key press into userGuess variable
     hangmanGame.userGuess = event.key.toLowerCase();
 
@@ -124,7 +129,7 @@ window.onload = function(){
     
     //Created a while loop to check for wins (succesful word match) and if not enter to play game
     while (hangmanGame.remainingLetters > 0){
-
+        
         //compared useguess to current word and then applies change to underscores if matched
         //if yes change underscore and update underscore 
         //decrement guess
