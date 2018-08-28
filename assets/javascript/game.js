@@ -25,8 +25,12 @@ window.onload = function(){
 
         //function to choose word from word bank and break it apart to fill the array
         chooseWord: function() {
-            currentWord = (this.wordBank[Math.floor(Math.random() * this.wordBank.length)]).split("");
-            return currentWord.length;
+            this.currentWord = (this.wordBank[Math.floor(Math.random() * this.wordBank.length)]).split("");
+            console.log(this.currentWord.length);
+            this.remainingLetters = this.currentWord.length;
+            // remainingLetters = remainingLetters;
+            console.log(this.remainingLetters);
+            
         },
 
         //function to determine and set the underscore array based on chosen word
@@ -34,10 +38,11 @@ window.onload = function(){
             
             
             this.underscores.length = this.currentWord.length;
-            for (i=0; i<currentWord.length; i++){
-            this.underscores[i] = "_";
             console.log(this.underscores.length);
-            console.log(this.currentWord.length);
+            for (i=0; i<this.currentWord.length; i++){
+            this.underscores[i] = "_";
+            // console.log(this.underscores.length);
+            // console.log(currentWord.length);
             }
             // console.log(this.underscores.length);
 
@@ -46,8 +51,8 @@ window.onload = function(){
                 document.getElementById("fillunderscore").innerHTML = this.underscores.join(" ");
             }
             //set underscore counter counter
-            this.remainingLetters = this.currentWord.length;
-            console.log(this.remainingLetters);
+            // this.remainingLetters = this.currentWord.length;
+            // console.log(this.remainingLetters);
 
         },
 
@@ -72,7 +77,10 @@ window.onload = function(){
 
         //function change array and update
         gameWordUpdate: function () {
+            console.log(this.currentWord.length);
             for (j=0; j<this.currentWord.length;j++) {
+                console.log(this.currentWord.length);
+                console.log(this.userGuess);
                 if (this.currentWord[j] === this.userGuess) {
                 this.underscores[j] = this.userGuess;
                 this.remainingLetters--;
@@ -98,16 +106,7 @@ window.onload = function(){
         },
     };
     
-    
-    
-    //grabs keypress on key up
-    document.onkeyup = function(event){
-        // debugger;
-    //stores key press into userGuess variable
-    hangmanGame.userGuess = event.key.toLowerCase();
-
-    //object method call to push guesses to DOM
-    hangmanGame.pushGuesses();
+    // debugger;
 
     //initialte a word choice from word bank for game start
     hangmanGame.chooseWord();
@@ -115,44 +114,68 @@ window.onload = function(){
     //sets underscope array length and outputs to DOM
     hangmanGame.setUnderscoreLength();
 
-    //call to push track and push guesses left count
-    hangmanGame.supplyGuesses();
-
-    //call function to push wins and losses starter count
-    hangmanGame.supplyWinsLosses();
-
+    
+    //grabs keypress on key up
+    document.onkeyup = function(event){
+          
+    //stores key press into userGuess variable
+    hangmanGame.userGuess = event.key.toLowerCase();
+    hangmanGame.pushGuesses();
+    
+    
+    
     console.log(hangmanGame.underscores);
-    console.log(currentWord);
+    console.log(hangmanGame.currentWord);
     console.log(hangmanGame.userGuess);
+    console.log(hangmanGame.remainingLetters);
         
-    }
+    
     
     //Created a while loop to check for wins (succesful word match) and if not enter to play game
-    while (hangmanGame.remainingLetters > 0){
+
         
+        
+    if ((hangmanGame.remainingLetters || this.remainingLetters) > 0){
+        //call to push track and push guesses left count
+        hangmanGame.supplyGuesses();
+
+        //call function to push wins and losses starter count
+        hangmanGame.supplyWinsLosses();
+
+        //object method call to push guesses to DOM
+        // hangmanGame.pushGuesses();
+
         //compared useguess to current word and then applies change to underscores if matched
         //if yes change underscore and update underscore 
         //decrement guess
         hangmanGame.gameWordUpdate();
         hangmanGame.userGuesses--;
 
-        document.onkeyup = function(event){
+        // document.onkeyup = function(event){
     
-        //stores key press into userGuess variable
-        hangmanGame.userGuess = event.key.toLowerCase();
+        // //stores key press into userGuess variable
+        // hangmanGame.userGuess = event.key.toLowerCase();
         //else break out to ask for another key
         //decrement guess
         //push new guess to screen
-        hangmanGame.pushGuesses();
+        // hangmanGame.pushGuesses();
         }
-    //Breakout
-    //wins++
-    //reset -> # guesses
-    //      -> reset array to 0 (does it overwrite?)
-    hangmanGame.resetFunc();
-    
-    }
+        else if (hangmanGame.remainingLetters=0) {
+            //initialte a word choice from word bank for game start
+            hangmanGame.chooseWord();
 
+            //sets underscope array length and outputs to DOM
+            hangmanGame.setUnderscoreLength();
+            //Breakout
+            //wins++
+            //reset -> # guesses
+            //      -> reset array to 0 (does it overwrite?)
+            hangmanGame.resetFunc();
+            }
+    
+  
+        }
+    
 };
     
     
