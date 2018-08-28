@@ -135,7 +135,7 @@ window.onload = function(){
 
         
         
-    if ((hangmanGame.remainingLetters || this.remainingLetters) > 0){
+    if ((hangmanGame.remainingLetters) > 0){
         //call to push track and push guesses left count
         hangmanGame.supplyGuesses();
 
